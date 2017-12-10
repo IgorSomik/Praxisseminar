@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/StartScreen.unity
+    guid: 4f6da175029f1a54ea0e1c50184f257d
+  - enabled: 1
+    path: Assets/Vase_Scene_Text.unity
+    guid: 5f8d8cd550eb73c41af8561e03b6c56b
+  - enabled: 1
+    path: Assets/Vase_Scene_Vuforia.unity
+    guid: 756588c6b50cf1d43b9c9c7534979ba9

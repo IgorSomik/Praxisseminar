@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: Abzlbnb/////AAAAGQJnRLPCxEN7jvuXE2y+vvNs/nNytEzJ9wDrJ4mH9YteE/3KJAt6gkD3bEHil6Ig7h65pgPQhZayZr78aczcBIe/b6tAN0GqkdWGys3nymMUadMeOGvBWrZii6lBbkGXIPxxBtKBbgHjuzMd5mpI91YS+WZTy2yqxw1dw8J0WtK4eYbxMjj/7zMn3GY643/7movPbnUhCKiEMINrMVRZJDjn5OBIG+O1kPOF2ndWdPHNP7kVIeYXaxHfZE+hCPcxmslzVcGf1kjB5mFtv/mnyt9SfQgL5Nsr6NBaxLv9ebh/nMuAsaGBkh9Zpds9/81+BhiJSufK11xkfwEnonSRihqxhpZInBPEeTCARS+nsmyp
+    vuforiaLicenseKey: AW8pbbf/////AAAAGYafCAEF+ERUtHPjaJN/CnoFS89lGmapTXoS9MSs2WsScqp7Zow9B4A2se9SNHPJar6ji2GEy49A6+KDiDy/LMrY9MST67aYeLzEeSzHcgai+oveOFcVO+7mR00p4Ce44SeJUopjiENgQpfREmka8FniGGPEWTH56tyvPak2yBIF48gsNbPGlvSaiyns4/x6UYKeVvaeLyScYw9CZqUHTt8A/6du/sMH5PGIv3FVaM5PGfEz30YRakq0x8zfTh9ax6Tf7ocoBjEGrnGfeZ7ZnOiDHwniOTHejd7/Gw4+byvZVjX2cldvFHDABkiMIY55RsPir7DDJZ2dr3xHcNnNAGfx/myouSsN+zxBdKG4sAtr
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
@@ -44,9 +44,9 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
-    - PlaygroundDB
+    - Praxisseminar_Contrast_Targets
     dataSetsToActivate:
-    - PlaygroundDB
+    - Praxisseminar_Contrast_Targets
   videoBackground:
     clippingMode: 0
     matteShader: {fileID: 4800000, guid: f84e93cca971cda47a225f4c6a4156c9, type: 3}

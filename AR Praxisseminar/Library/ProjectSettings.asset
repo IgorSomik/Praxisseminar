@@ -4,14 +4,14 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  productGUID: 0174e4aac9003834d99eb412b48162c5
+  productGUID: 576822e220b7fde4f88a46ebd9ccb76c
   AndroidProfiler: 0
   defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: ha
-  productName: ahah
+  companyName: Praxisseminar
+  productName: Museum_AR
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -57,7 +57,7 @@ PlayerSettings:
   iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 1
   iosAllowHTTPDownload: 1
-  allowedAutorotateToPortrait: 0
+  allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 0
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
@@ -141,7 +141,7 @@ PlayerSettings:
   targetPixelDensity: 0
   resolutionScalingMode: 0
   applicationIdentifier:
-    Android: com.ARPraxisseminar.MuseumAR
+    Android: com.Praxisseminar.MuseumAR
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
@@ -512,14 +512,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: New Unity Project
+  metroPackageName: Praxisseminar_Kontrast
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: New Unity Project
+  metroApplicationDescription: Praxisseminar_Kontrast
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
