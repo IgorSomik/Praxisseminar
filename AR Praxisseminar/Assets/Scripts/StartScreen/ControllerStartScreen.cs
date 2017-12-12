@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class ControllerStartScreen : MonoBehaviour {
 
@@ -9,13 +6,16 @@ public class ControllerStartScreen : MonoBehaviour {
     {
         if (Input.GetKey("escape"))
             Application.Quit();
+    }
 
+    public void loadStonePanelScene()
+    {
+        LevelManager.ChangeScene("Vase_Scene_Vuforia");
     }
 
     public void loadVaseInformationScene()
     {
-        SceneManager.LoadScene(1);
-        SceneManager.UnloadSceneAsync(0);
+        LevelManager.ChangeScene("Vase_Scene_Text");
     }
 
     public void quitApplication()

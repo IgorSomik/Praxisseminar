@@ -12,5 +12,8 @@ EditorBuildSettings:
     path: Assets/Vase_Scene_Text.unity
     guid: 5f8d8cd550eb73c41af8561e03b6c56b
   - enabled: 1
+    path: Assets/Vase_Scene_Text_Extra.unity
+    guid: 44b5b12c8ea3def49b9705cf1cb6d948
+  - enabled: 1
     path: Assets/Vase_Scene_Vuforia.unity
     guid: 756588c6b50cf1d43b9c9c7534979ba9

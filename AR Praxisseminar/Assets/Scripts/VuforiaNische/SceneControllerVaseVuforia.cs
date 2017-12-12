@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class SceneControllerVaseVuforia : MonoBehaviour {
 
@@ -24,8 +21,7 @@ public class SceneControllerVaseVuforia : MonoBehaviour {
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene(1);
-            SceneManager.UnloadSceneAsync(2);
+            LevelManager.LoadLastScene();
         }
     }
 }

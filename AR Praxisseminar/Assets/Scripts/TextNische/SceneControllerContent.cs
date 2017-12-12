@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class SceneControllerContent : MonoBehaviour {
 
@@ -15,13 +12,16 @@ public class SceneControllerContent : MonoBehaviour {
 
     public void loadVaseCameraScene()
     {
-        SceneManager.LoadScene(2);
-        SceneManager.UnloadSceneAsync(1);
+        LevelManager.ChangeScene("Vase_Scene_Vuforia");
+    }
+
+    public void loadExtraContentScreen()
+    {
+        LevelManager.ChangeScene("Vase_Scene_Text_Extra");
     }
 
     public void loadStartScreen()
     {
-        SceneManager.LoadScene(0);
-        SceneManager.UnloadSceneAsync(1);
+        LevelManager.ChangeScene("StartScreen");
     }
 }
