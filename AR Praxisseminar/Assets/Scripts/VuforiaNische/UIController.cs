@@ -35,13 +35,14 @@ public class UIController : MonoBehaviour {
         startPositionCap = EwerCap.transform.position;
         startPositionWaterCrane = WaterSurfaceCrane.transform.position;
         startPositionWaterBowl = WaterInBowl.transform.position;
+        print(WaterInBowl.transform.position.y);
     }
 
     private void Update()
     {
         if (handleClicked)
         {
-            if(EwerCap.transform.position.y < 8.5f)
+            if(EwerCap.transform.position.y < startPositionCap.y + 0.9f)
             {
                 EwerCap.transform.position += new Vector3(0, 0.05f, 0);
             }
@@ -49,7 +50,7 @@ public class UIController : MonoBehaviour {
 
         if (craneClicke)
         {
-            if(WaterSurfaceCrane.transform.position.y < 2.25f)
+            if(WaterSurfaceCrane.transform.position.y < startPositionWaterCrane.y + 0.16f)
             {
                 WaterSurfaceCrane.transform.position += new Vector3(0, 0.005f, 0);
             }
@@ -57,7 +58,7 @@ public class UIController : MonoBehaviour {
 
         if (bowlClicked)
         {
-            if(WaterInBowl.transform.position.y < 2.6f)
+            if(WaterInBowl.transform.position.y < startPositionWaterBowl.y + 0.51f)
             {
                 WaterInBowl.transform.position += new Vector3(0, 0.005f, 0);
             }

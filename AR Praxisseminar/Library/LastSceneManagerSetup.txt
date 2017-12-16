@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/stone_scene_vuforia.unity
+- path: Assets/Vase_Scene_Text.unity
   isLoaded: 1
   isActive: 1

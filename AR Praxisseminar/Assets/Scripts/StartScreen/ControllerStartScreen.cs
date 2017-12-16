@@ -10,7 +10,7 @@ public class ControllerStartScreen : MonoBehaviour {
 
     public void loadStonePanelScene()
     {
-        LevelManager.ChangeScene("Vase_Scene_Vuforia");
+        LevelManager.ChangeScene("Stone_Scene_Vuforia");
     }
 
     public void loadVaseInformationScene()
