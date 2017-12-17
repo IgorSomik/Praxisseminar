@@ -17,6 +17,7 @@ namespace Vuforia
         #region PRIVATE_MEMBER_VARIABLES
  
         private TrackableBehaviour mTrackableBehaviour;
+        private CanvasController canvasController;
     
         #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -26,6 +27,8 @@ namespace Vuforia
     
         void Start()
         {
+            canvasController = GameObject.FindGameObjectWithTag("Controller").GetComponent<CanvasController>();
+
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
             if (mTrackableBehaviour)
             {
@@ -83,6 +86,8 @@ namespace Vuforia
                 component.enabled = true;
             }
 
+            canvasController.enableCanvas();
+
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
         }
 
@@ -103,6 +108,8 @@ namespace Vuforia
             {
                 component.enabled = false;
             }
+
+            canvasController.disableCanvas();
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
         }

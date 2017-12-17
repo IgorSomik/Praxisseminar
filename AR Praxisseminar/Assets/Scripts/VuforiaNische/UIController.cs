@@ -1,73 +1,95 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIController : MonoBehaviour {
-
-    public GameObject Canves;
-    public GameObject TextCrane;
-    public GameObject TextBowl;
-    public GameObject TextHandle;
+public class UIController : MonoBehaviour
+{
+    //Public variables
+    public GameObject InformationTextArea;
+    public Text HeaderInfoArea;
+    public Text ContentInfoArea;
     public GameObject EwerCap;
     public GameObject WaterInPod;
-    public GameObject WaterInBowl;
     public GameObject WaterFlow;
     public GameObject WaterSurfaceCrane;
+    public GameObject WaterInBowl;
 
-    public GameObject Vase;
-
+    //private variables
     private GameObject[] clickables;
+
     private bool textCurrentlyShown = false;
     private bool handleClicked = false;
-    private bool craneClicke = false;
+    private bool craneClicked = false;
     private bool bowlClicked = false;
-    private GameObject displayedText;
+
     private GameObject clickedSelectable;
+
     private Vector3 startPositionCap;
     private Vector3 startPositionWaterCrane;
     private Vector3 startPositionWaterBowl;
 
 
+    //Called when the scene is loaded. Gets all clickables and all start positions of the objects which will be moved later
     private void Start()
     {
         clickables = GameObject.FindGameObjectsWithTag("Clickables");
         startPositionCap = EwerCap.transform.position;
         startPositionWaterCrane = WaterSurfaceCrane.transform.position;
         startPositionWaterBowl = WaterInBowl.transform.position;
-        print(WaterInBowl.transform.position.y);
     }
 
+    //This function is called every frame
     private void Update()
     {
-        if (handleClicked)
-        {
-            if(EwerCap.transform.position.y < startPositionCap.y + 0.9f)
-            {
-                EwerCap.transform.position += new Vector3(0, 0.05f, 0);
-            }
-        }
+        isHandleSelected();
+        isCraneSelected();
+        isBowlSelected();
+    }
 
-        if (craneClicke)
-        {
-            if(WaterSurfaceCrane.transform.position.y < startPositionWaterCrane.y + 0.16f)
-            {
-                WaterSurfaceCrane.transform.position += new Vector3(0, 0.005f, 0);
-            }
-        }
 
+    //Checks if the bowl was selected by the user and rauses the water in the bowl
+    private void isBowlSelected()
+    {
         if (bowlClicked)
         {
-            if(WaterInBowl.transform.position.y < startPositionWaterBowl.y + 0.51f)
+            if (WaterInBowl.transform.position.y < startPositionWaterBowl.y + 0.51f)
             {
                 WaterInBowl.transform.position += new Vector3(0, 0.005f, 0);
             }
         }
     }
 
+
+    //Checks if the crane was selected by the user and raises the water in the bowl
+    private void isCraneSelected()
+    {
+        if (craneClicked)
+        {
+            if (WaterSurfaceCrane.transform.position.y < startPositionWaterCrane.y + 0.16f)
+            {
+                WaterSurfaceCrane.transform.position += new Vector3(0, 0.005f, 0);
+            }
+        }
+    }
+
+
+    //Checks if the handle was selected by the user and raises the cap of the ewer
+    private void isHandleSelected()
+    {
+        if (handleClicked)
+        {
+            if (EwerCap.transform.position.y < startPositionCap.y + 0.9f)
+            {
+                EwerCap.transform.position += new Vector3(0, 0.05f, 0);
+            }
+        }
+    }
+
+
+    //Checks which object was selected by the user and depending on the case hides the non selected objects or shows all selectable objects again
     public void clickOnParticle(GameObject clickedObject)
     {
-        clickedSelectable = clickedObject;
+        //Checks if information text is currently shown
         if (!textCurrentlyShown)
         {
             for(int i = 0; i < clickables.Length; i++)
@@ -77,7 +99,8 @@ public class UIController : MonoBehaviour {
                     clickables[i].SetActive(false);
                 }
             }
-            activateTextForClickedObject(clickedObject.name);
+            clickedSelectable = clickedObject;
+            showInformationOnScreen(clickedObject.name);
             textCurrentlyShown = true;
         }
         else
@@ -86,34 +109,71 @@ public class UIController : MonoBehaviour {
         }
     }
 
-    private void activateTextForClickedObject(string name)
+
+    //Displays the information for the clicked object
+    private void showInformationOnScreen(string name)
     {
-        if(name == "ParticleCrane")
+        string textHeader = "";
+        string textContent = "";
+
+        if(name == "ParticleHandle")
         {
-            displayedText = TextCrane;
-            WaterFlow.SetActive(true);
-            Invoke("showWaterInBowl", 0.7f);
+            textHeader = "Kesselgriff";
+            textContent = "Der Kessel wurde stehts mit frischem Wasser befüllt in der Lavabo-Nische aufgehängt.";
+            raiseEwerCap();
         }
-        else if(name == "ParticleBowl")
+        else if (name == "ParticleCrane")
         {
-            displayedText = TextBowl;
-            WaterInBowl.SetActive(true);
-            bowlClicked = true;
+            textHeader = "Wasserhahn";
+            textContent = "Die Mönche haben sich nach der Arbeit die Hände mit sauberem Wasser aus dem Kessel gewaschen.";
+            enableWaterFlow();
         }
         else
         {
-            displayedText = TextHandle;
-            handleClicked = true;
-            WaterInPod.SetActive(true);
+            textHeader = "Wasserschüssel";
+            textContent = "Eine Schüssel wurde unter den Kessel gestellt um das Wasser aus dem Wasserhahn aufzufangen.";
+            displayWaterInBowl();
         }
-        displayedText.SetActive(true);
+        HeaderInfoArea.text = textHeader;
+        ContentInfoArea.text = textContent;
+
+        InformationTextArea.SetActive(true);
+
     }
 
+
+    //Shows the water in the bowl
+    private void displayWaterInBowl()
+    {
+        WaterInBowl.SetActive(true);
+        bowlClicked = true;
+    }
+
+
+    //Shows the waterflow from the crane and displays the water in the bowl
+    private void enableWaterFlow()
+    {
+        WaterFlow.SetActive(true);
+        Invoke("showWaterInBowl", 0.7f);
+    }
+
+
+    //Shows the water in the bowl after a short delay
     private void showWaterInBowl()
     {
-        craneClicke = true;
+        craneClicked = true;
     }
 
+
+    //Raises the ewer cap and shows the water inside
+    private void raiseEwerCap()
+    {
+        handleClicked = true;
+        WaterInPod.SetActive(true);
+    }
+
+
+    //Shows all highlights of the clickable objects
     public void showAllClickables()
     {
         for(int i = 0; i < clickables.Length; i++)
@@ -123,22 +183,28 @@ public class UIController : MonoBehaviour {
                 clickables[i].SetActive(true);
             }
         }
+        resetAllOjects();
+        clickedSelectable = null;
+        textCurrentlyShown = false;
 
-        if (WaterFlow.activeInHierarchy)
-        {
-            WaterFlow.SetActive(false);
-        }
+        InformationTextArea.SetActive(false);
+    }
 
+
+    //Checks which object was clicked and resets the object and the animation to the original state
+    private void resetAllOjects()
+    {
         if (handleClicked)
         {
+            WaterInPod.SetActive(false);
             handleClicked = false;
             EwerCap.transform.position = startPositionCap;
-            WaterInPod.SetActive(false);
         }
 
-        if (craneClicke)
+        if (craneClicked)
         {
-            craneClicke = false;
+            WaterFlow.SetActive(false);
+            craneClicked = false;
             WaterSurfaceCrane.transform.position = startPositionWaterCrane;
         }
 
@@ -148,8 +214,5 @@ public class UIController : MonoBehaviour {
             bowlClicked = false;
             WaterInBowl.transform.position = startPositionWaterBowl;
         }
-        clickedSelectable = null;
-        textCurrentlyShown = false;
-        displayedText.SetActive(false);
     }
 }

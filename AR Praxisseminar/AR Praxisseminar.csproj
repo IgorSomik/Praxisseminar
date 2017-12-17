@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\TextNische\ControllerOrientationInformation.cs" />
     <Compile Include="Assets\Scripts\TextNische\SceneControllerContent.cs" />
     <Compile Include="Assets\Scripts\TextNischeExtra\SceneControllerExtraContent.cs" />
+    <Compile Include="Assets\Scripts\VuforiaNische\CanvasController.cs" />
     <Compile Include="Assets\Scripts\VuforiaNische\ClickHandler.cs" />
     <Compile Include="Assets\Scripts\VuforiaNische\SceneControllerVaseVuforia.cs" />
     <Compile Include="Assets\Scripts\VuforiaNische\UIController.cs" />

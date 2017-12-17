@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 
-public class SceneControllerVaseVuforia : MonoBehaviour {
+public class SceneControllerVaseVuforia : MonoBehaviour
+{
 
-	// Use this for initialization
+	//Is loaded when the scene is loaded
 	void Start ()
     {
+        //Checks if the orientation of the device is on one of the landscapes
         if (Screen.orientation != ScreenOrientation.Landscape)
         {
             Screen.orientation = ScreenOrientation.LandscapeLeft;
@@ -19,6 +21,7 @@ public class SceneControllerVaseVuforia : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        //Checks if the escape (on mobile device "back) button was clicked abd loads the previous scene
         if (Input.GetKey(KeyCode.Escape))
         {
             LevelManager.LoadLastScene();
