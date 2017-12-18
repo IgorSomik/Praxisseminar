@@ -10,13 +10,19 @@ public class CanvasController : MonoBehaviour
     //Enables the canves 
     public void enableCanvas()
     {
-        Canves.SetActive(true);
+        if(Canves.activeSelf == false)
+        {
+            Canves.SetActive(true);
+        }
     }
 
 
     //Disables the canvas 
     public void disableCanvas()
     {
-        Canves.SetActive(false);
+        if (Canves.activeSelf == true)
+        {
+            Canves.SetActive(false);
+        }
     }
 }
