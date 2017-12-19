@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
@@ -8,6 +7,8 @@ public class UIController : MonoBehaviour
     public GameObject InformationTextArea;
     public Text HeaderInfoArea;
     public Text ContentInfoArea;
+    public GameObject ShowHideContentButton;
+    public GameObject AllContendOnScreen;
     public GameObject EwerCap;
     public GameObject WaterInPod;
     public GameObject WaterFlow;
@@ -21,6 +22,7 @@ public class UIController : MonoBehaviour
     private bool handleClicked = false;
     private bool craneClicked = false;
     private bool bowlClicked = false;
+    private bool showHideButtonClicked = false;
 
     private GameObject clickedSelectable;
 
@@ -138,7 +140,6 @@ public class UIController : MonoBehaviour
         ContentInfoArea.text = textContent;
 
         InformationTextArea.SetActive(true);
-
     }
 
 
@@ -213,6 +214,25 @@ public class UIController : MonoBehaviour
             WaterInBowl.SetActive(false);
             bowlClicked = false;
             WaterInBowl.transform.position = startPositionWaterBowl;
+        }
+    }
+
+
+    //Checks if the show or hide button was clicked and shwos or hides the content on the screen
+    public void showOrHideContentOnScreen()
+    {
+        showHideButtonClicked = !showHideButtonClicked;
+
+        if (showHideButtonClicked)
+        {
+            AllContendOnScreen.SetActive(false);
+            ShowHideContentButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("show");
+        }
+        else
+        {
+            AllContendOnScreen.SetActive(true);
+            ShowHideContentButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("hide");
+
         }
     }
 }

@@ -24,7 +24,12 @@ public class SceneControllerVaseVuforia : MonoBehaviour
         //Checks if the escape (on mobile device "back) button was clicked abd loads the previous scene
         if (Input.GetKey(KeyCode.Escape))
         {
-            LevelManager.LoadLastScene();
+            loadPreviousScene();
         }
+    }
+
+    public void loadPreviousScene()
+    {
+        LevelManager.LoadLastScene();
     }
 }
