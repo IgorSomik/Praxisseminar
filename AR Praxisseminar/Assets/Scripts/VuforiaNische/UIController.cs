@@ -121,7 +121,7 @@ public class UIController : MonoBehaviour
         if(name == "ParticleHandle")
         {
             textHeader = "Kesselgriff";
-            textContent = "Der Kessel wurde stehts mit frischem Wasser befüllt in der Lavabo-Nische aufgehängt.";
+            textContent = "Der Kessel wurde in der Lavabo-Nische aufgehängt und stehts mit frischem Wasser befüllt.";
             raiseEwerCap();
         }
         else if (name == "ParticleCrane")
@@ -133,7 +133,7 @@ public class UIController : MonoBehaviour
         else
         {
             textHeader = "Wasserschüssel";
-            textContent = "Eine Schüssel wurde unter den Kessel gestellt um das Wasser aus dem Wasserhahn aufzufangen.";
+            textContent = "Eine Schüssel wurde unter den Kessel gestellt um das fließende Wasser aus dem Wasserhahn aufzufangen.";
             displayWaterInBowl();
         }
         HeaderInfoArea.text = textHeader;
