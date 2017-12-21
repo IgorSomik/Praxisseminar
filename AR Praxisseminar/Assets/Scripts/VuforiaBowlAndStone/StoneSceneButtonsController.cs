@@ -3,7 +3,9 @@ using UnityEngine.UI;
 
 public class StoneSceneButtonsController : MonoBehaviour {
 
+    public GameObject TextOnStoneWall;
     public GameObject LatinTextObject;
+    public GameObject GermanTextObject;
     public GameObject ShowHideTextButton;
     public GameObject ShowGerOrLatButton;
 
@@ -11,18 +13,18 @@ public class StoneSceneButtonsController : MonoBehaviour {
     private bool gerTextShown = false;
 
 
-    public void showOrHideLatinText()
+    public void showOrHideText()
     {
         textDisplayed = !textDisplayed;
 
         if (textDisplayed)
         {
-            LatinTextObject.SetActive(true);
+            TextOnStoneWall.SetActive(true);
             ShowHideTextButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("hideText");
         }
         else
         {
-            LatinTextObject.SetActive(false);
+            TextOnStoneWall.SetActive(false);
             ShowHideTextButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("showText");
         }
     }
@@ -35,10 +37,14 @@ public class StoneSceneButtonsController : MonoBehaviour {
         if (gerTextShown)
         {
             ShowGerOrLatButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("latText");
+            LatinTextObject.SetActive(false);
+            GermanTextObject.SetActive(true);
         }
         else
         {
             ShowGerOrLatButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("gerText");
+            GermanTextObject.SetActive(false);
+            LatinTextObject.SetActive(true);
         }
     }
 }

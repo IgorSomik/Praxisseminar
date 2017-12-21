@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class CanvasController : MonoBehaviour
     //Enables the canves 
     public void enableCanvas()
     {
-        if(Canves.activeSelf == false)
+        if (SceneManager.GetActiveScene().name == "Vase_Scene_Vuforia" && Canves.activeSelf == false)
         {
             Canves.SetActive(true);
         }
@@ -20,7 +20,7 @@ public class CanvasController : MonoBehaviour
     //Disables the canvas 
     public void disableCanvas()
     {
-        if (Canves.activeSelf == true)
+        if (SceneManager.GetActiveScene().name == "Vase_Scene_Vuforia" && Canves.activeSelf == true)
         {
             Canves.SetActive(false);
         }
