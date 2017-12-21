@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Stone_Scene_Vuforia.unity
+- path: Assets/stone_scene_vuforia.unity
   isLoaded: 1
   isActive: 1
