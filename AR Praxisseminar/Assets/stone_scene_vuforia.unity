@@ -656,7 +656,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 32be05aee418c0b459d046309c21347d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 32be05aee418c0b459d046309c21347d, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -792,6 +792,14 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 39c8bcf5eb87d184696bb39f26e06140, type: 2}
+    - target: {fileID: 100004, guid: 88d84b64ff26a8d479bc8e0ee0a768b3, type: 3}
+      propertyPath: m_TagString
+      value: Stonewall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 88d84b64ff26a8d479bc8e0ee0a768b3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88d84b64ff26a8d479bc8e0ee0a768b3, type: 3}
   m_IsPrefabParent: 0
@@ -1369,6 +1377,14 @@ Prefab:
     - target: {fileID: 400006, guid: f86ae31facf5e59408eb8a5a09f86f46, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.5999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: f86ae31facf5e59408eb8a5a09f86f46, type: 3}
+      propertyPath: m_TagString
+      value: Stonewall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: f86ae31facf5e59408eb8a5a09f86f46, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f86ae31facf5e59408eb8a5a09f86f46, type: 3}

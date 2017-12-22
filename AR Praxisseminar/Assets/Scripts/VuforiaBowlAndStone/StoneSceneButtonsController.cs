@@ -3,16 +3,19 @@ using UnityEngine.UI;
 
 public class StoneSceneButtonsController : MonoBehaviour {
 
+    //Public variables
     public GameObject TextOnStoneWall;
     public GameObject LatinTextObject;
     public GameObject GermanTextObject;
     public GameObject ShowHideTextButton;
     public GameObject ShowGerOrLatButton;
 
+    //Private variables
     private bool textDisplayed = false;
     private bool gerTextShown = false;
 
 
+    //Shows of hides the text on the stone wall
     public void showOrHideText()
     {
         textDisplayed = !textDisplayed;
@@ -30,6 +33,7 @@ public class StoneSceneButtonsController : MonoBehaviour {
     }
 
 
+    //Changes the text on the stone wall to latin or german
     public void switchTextToGerOrLat()
     {
         gerTextShown = !gerTextShown;

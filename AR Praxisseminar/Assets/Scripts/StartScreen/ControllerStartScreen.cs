@@ -13,7 +13,7 @@ public class ControllerStartScreen : MonoBehaviour {
     //Loads the scene with the stone panel target
     public void loadStonePanelScene()
     {
-        LevelManager.ChangeScene("Stone_Scene_Vuforia");
+        LevelManager.ChangeScene("stone_scene_vuforia");
     }
 
     //Loads the scene with the vase target
